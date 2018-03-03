@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HỆ SỐ ĐIỂM"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_medium"/>
+
+        <RadioGroup
+            android:layout_marginTop="@dimen/margin_small"
+            android:id="@+id/radioGroupHeSoDiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <RadioButton
+                android:id="@+id/radioButtonHS1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hệ số 1"
+                android:textSize="@dimen/text_size_medium"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonHS2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hệ số 2"
+                android:textSize="@dimen/text_size_medium"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonHS3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hệ số 3"
+                android:textSize="@dimen/text_size_medium"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/duongthang"
+        android:layout_margin="@dimen/margin_medium"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHỌN MÔN HỌC"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_medium"/>
+
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/duongthang"
+        android:layout_margin="@dimen/margin_medium"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:layout_margin="@dimen/margin_medium">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_weight="7"
+                android:background="@color/color_editTextDiem"
+                android:gravity="right"
+                android:lines="1"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_editText_NhapDiem"
+                android:textStyle="bold"
+
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:background="@color/color_editTextDiem"
+                android:text="X"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:background="@color/color_editTextDiem"
+
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="X"
+                android:textSize="@dimen/text_size_large"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_medium"
+            android:weightSum="6">
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_xoa"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_medium"
+            android:weightSum="6">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_number"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin_large">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_close"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/margin_medium"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cập nhật"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_capnhat"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/margin_medium"/>
+
+    </LinearLayout>
+</LinearLayout>
