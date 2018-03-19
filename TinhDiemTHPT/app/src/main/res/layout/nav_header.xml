@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:background="?attr/colorPrimaryDark"
+    android:padding="16dp"
+    android:gravity="bottom"
+    android:onClick="editInfo"
+    android:orientation="vertical"
+    tools:ignore="OnClick">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_profile"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:text="Ý Nhi"
+        android:gravity="center"
+        android:textColor="@color/color_white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:text="Lớp: 12                     Học kì: 2"
+        android:gravity="center"
+        android:textColor="@color/color_white"/>
+
+</LinearLayout>

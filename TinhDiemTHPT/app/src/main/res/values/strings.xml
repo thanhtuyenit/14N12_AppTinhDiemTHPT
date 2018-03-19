@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">TinhDiemTHPT</string>
+    <string name="menu_trang_chu">Trang chủ</string>
+    <string name="menu_tong_quan">Tổng quan</string>
+    <string name="menu_diem_du_kien">Điểm dự kiến</string>
+    <string name="menu_thoi_khoa_bieu">Thời khóa biểu</string>
+    <string name="menu_bieu_do">Biểu đồ, thống kê</string>
+    <string name="menu_su_kien">Sự kiện</string>
+    <string name="menu_cai_dat">Cài đặt</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
