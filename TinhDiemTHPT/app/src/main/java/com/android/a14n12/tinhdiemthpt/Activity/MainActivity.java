@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,12 +40,14 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DatabaseTinhDiemTHPT mDatabase;
     private SQLiteDatabase db;
+//    private View nav_header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
+//        nav_header = getLayoutInflater().inflate(R.layout.nav_header, null);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         openFragment(new TrangChuFragment());
         connectDB();
 
-        //Vid dụ 1 trường hợp lấy dữ kiệu từ database:
+        //Vi dụ 1 trường hợp lấy dữ kiệu từ database
         ArrayList<MonHoc> listMonHoc = mDatabase.getMonHoc();
         for (int i=0; i<listMonHoc.size(); i++)
         System.out.println(listMonHoc.get(i).getTenMonHoc());
@@ -99,22 +102,18 @@ public class MainActivity extends AppCompatActivity {
                 new DrawerLayout.DrawerListener() {
                     @Override
                     public void onDrawerSlide(View drawerView, float slideOffset) {
-                        Log.d("Main Log: ","onDrawerSlide");
                     }
 
                     @Override
                     public void onDrawerOpened(View drawerView) {
-                        Log.d("Main Log: ","onDrawerOpened");
                     }
 
                     @Override
                     public void onDrawerClosed(View drawerView) {
-                        Log.d("Main Log: ","onDrawerClosed");
                     }
 
                     @Override
                     public void onDrawerStateChanged(int newState) {
-                        Log.d("Main Log: ","onDrawerStateChanged");
                     }
                 }
         );
@@ -134,12 +133,18 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void editInfo(View view){
+    public void showDialogEditInfo(View view){
         final Dialog dialogEditInfo = new Dialog(this);
         dialogEditInfo.setContentView(R.layout.dialog_edit_info_layout);
-        EditText edtNamre = dialogEditInfo.findViewById(R.id.edtName);
+
+        final EditText edtName = dialogEditInfo.findViewById(R.id.edtName);
         TextView tvHuy = dialogEditInfo.findViewById(R.id.tv_huy);
         TextView tvDongy = dialogEditInfo.findViewById(R.id.tv_dong_y);
+        final RadioButton radioButton1 = dialogEditInfo.findViewById(R.id.rbt_hoc_ky1);
+
+//        final TextView tvName = nav_header.findViewById(R.id.tv_name);
+//        final TextView tvClassName = nav_header.findViewById(R.id.tv_class_name);
+//        final TextView tvSemester = nav_header.findViewById(R.id.tv_semester);
 
         tvHuy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,8 +155,8 @@ public class MainActivity extends AppCompatActivity {
         tvDongy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TO DO
-                Toast.makeText(getApplicationContext(), "Click dong y", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getApplicationContext(), R.string.str_update_success, Toast.LENGTH_SHORT).show();
                 dialogEditInfo.dismiss();
             }
         });

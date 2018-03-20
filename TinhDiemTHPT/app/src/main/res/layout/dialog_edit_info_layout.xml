@@ -78,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:id="@+id/radioGroup"
             android:orientation="horizontal">
 
             <RadioButton
