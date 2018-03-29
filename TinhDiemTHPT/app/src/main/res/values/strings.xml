@@ -8,8 +8,8 @@
     <string name="menu_su_kien">Sự kiện</string>
     <string name="menu_cai_dat">Cài đặt</string>
 
-    <string name="str_class_name">Lớp: </string>
-    <string name="str_semester">Học kì: </string>
+    <string name="str_class_name">Lớp:&#160;</string>
+    <string name="str_semester">Học kì: &#160; </string>
     <string name="str_update_success">Cập nhật thông tin thành công!</string>
 
 
