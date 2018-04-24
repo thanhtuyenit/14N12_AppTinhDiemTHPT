@@ -216,8 +216,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tvDongy = dialogEditInfo.findViewById(R.id.tv_dong_y);
         final Spinner spinner = dialogEditInfo.findViewById(R.id.spinner_class);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arr);
-        adapter.setDropDownViewResource
-                (android.R.layout.simple_list_item_single_choice);
+        adapter.setDropDownViewResource (android.R.layout.simple_list_item_single_choice);
         spinner.setAdapter(adapter);
         final RadioGroup radioGroup = dialogEditInfo.findViewById(R.id.radioGroup);
         final RadioButton radioButton1 = dialogEditInfo.findViewById(R.id.rbt_hoc_ky1);

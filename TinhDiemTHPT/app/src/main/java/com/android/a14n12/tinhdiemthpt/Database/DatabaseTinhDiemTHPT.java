@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.android.a14n12.tinhdiemthpt.Model.DiemTBMon;
 import com.android.a14n12.tinhdiemthpt.Model.MonHoc;
 
 import java.io.FileOutputStream;
@@ -36,7 +37,7 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String TB_DIEM_DIEM = "Diem";
 
     public static final String TB_DIEMTBMON_MAMONHOC = "MaMonHoc";
-    public static final String TB_DIEMTBMON_DIEMTB = "DiemTB    ";
+    public static final String TB_DIEMTBMON_DIEMTB = "DiemTB";
     public static final String TB_DIEMTBMON_HOCKI = "HocKi";
 
     public static final String TB_THOIKHOABIEU_ID = "Id";
@@ -141,4 +142,48 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
         }
         return list;
     }
+
+    public ArrayList<DiemTBMon> getDiemTB() {
+        ArrayList<DiemTBMon> list = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_DIEMTBMON;
+        Cursor cs = db.rawQuery(queryAllchar ,null);
+        try {
+            cs.moveToFirst();
+            while (!cs.isAfterLast()) {
+                list.add(new DiemTBMon(cs.getInt(0),cs.getInt(1),cs.getFloat(2)));
+                cs.moveToNext();
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return list;
+    }
+
+    public Float getDiemTBfromIdMonhoc( int id_monhoc, int hocki){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM "+TB_DIEMTBMON+" WHERE "+TB_DIEMTBMON_MAMONHOC+" = "+ id_monhoc +" AND "+TB_DIEMTBMON_HOCKI+" = "+hocki;
+        Log.d("TAG", "getDiemTBfromIdMonhoc: "+query);
+        Cursor cs = db.rawQuery(query,null);
+
+        Float kq = null;
+      try {
+          if(cs.getCount() >= 1) {
+              while (cs.moveToNext()) {
+                  kq = cs.getFloat(1);
+              }
+          }
+
+
+    } finally {
+        if (cs != null) {
+            cs.close();
+        }
+    }
+        return kq;
+    }
+
+
 }

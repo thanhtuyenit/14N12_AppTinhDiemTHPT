@@ -11,6 +11,13 @@
     <string name="str_class_name">Lớp:&#160;</string>
     <string name="str_semester">Học kì: &#160; </string>
     <string name="str_update_success">Cập nhật thông tin thành công!</string>
+    <string name="str_class">LỚP</string>
+    <string name="str_text_semester">HỌC KÌ</string>
+    <string name="str_text_diemcacmon">Điểm các môn</string>
 
-
+    <integer-array name="background">
+        <item>@drawable/bg_item_gridview</item>
+        <item>@drawable/bg_item_gridview_1</item>
+        <item>@drawable/bg_item_gridview</item>
+    </integer-array>
 </resources>
