@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseTinhDiemTHPT mDatabase;
     private SQLiteDatabase db;
     private TextView nav_tv_name, nav_tv_class, nav_tv_semester;
-
     private View nav_header;
     private MySharedPreferences mySharedPreferences;
+    private Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
         connectDB();
 
         //Vi dụ 1 trường hợp lấy dữ kiệu từ database
-        ArrayList<MonHoc> listMonHoc = mDatabase.getMonHoc();
-        for (int i = 0; i < listMonHoc.size(); i++)
-            System.out.println(listMonHoc.get(i).getTenMonHoc());
+//        ArrayList<MonHoc> listMonHoc = mDatabase.getMonHoc();
+//        for (int i = 0; i < listMonHoc.size(); i++)
+//            System.out.println(listMonHoc.get(i).getTenMonHoc());
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -139,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        checkFirstUse();
 
     }
 
@@ -274,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 nav_tv_class.setText(getResources().getString(R.string.str_class_name) + mySharedPreferences.getClassName());
                 Toast.makeText(getApplicationContext(), R.string.str_update_success, Toast.LENGTH_SHORT).show();
                 dialogEditInfo.dismiss();
+                refreshFragment();
             }
         });
         dialogEditInfo.show();
@@ -285,18 +288,26 @@ public class MainActivity extends AppCompatActivity {
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_main, fragment);
         transaction.commit();
+        currentFragment = fragment;
 
     }
 
 
-//    public void refreshFragment(Fragment fragment){
-//        Log.d(TAG, "refreshFragment: ");
+    public void refreshFragment(){
+        Log.d(TAG, "refreshFragment: ");
 //        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//        fragmentTransaction.detach(fragment);
-//        fragmentTransaction.attach(fragment);
-//        fragmentTransaction.commit();
-//    }
+        transaction = getFragmentManager().beginTransaction();
+        transaction.detach(currentFragment);
+        transaction.attach(currentFragment);
+        transaction.commit();
+        Log.d(TAG, "refreshFragment: "+currentFragment);
+    }
 
-
+    private void checkFirstUse(){
+        if(mySharedPreferences.getIsFirstUse()){
+            showDialogEditInfo(getCurrentFocus());
+            mySharedPreferences.setIsFirstUse(false);
+        }
+    }
 
 }

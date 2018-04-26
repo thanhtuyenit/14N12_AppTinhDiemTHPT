@@ -17,6 +17,7 @@ public class MySharedPreferences {
     private String CONST_CLASS_NAME = "Const_class_name";
     private String CONST_SEMESTER = "Const_semester";
     private String CONST_TOTAL_SCORE = "Const_total_score";
+    private String CONST_IS_FIRST_USE = "is_first_use";
     private static MySharedPreferences instance;
     private Context context;
     private SharedPreferences sharedPreferences;
@@ -57,6 +58,10 @@ public class MySharedPreferences {
         editor.commit();
         Log.d("TAG", "setTotalScore: "+score);
     }
+     public void setIsFirstUse(Boolean isFirstUse){
+         editor.putBoolean(CONST_IS_FIRST_USE, isFirstUse);
+         editor.commit();
+     }
 
     public String getName() {
         return sharedPreferences.getString(CONST_NAME, "");
@@ -72,6 +77,10 @@ public class MySharedPreferences {
 
     public Float getTotalScore() {
         return sharedPreferences.getFloat(CONST_TOTAL_SCORE, 0);
+    }
+
+    public Boolean getIsFirstUse(){
+        return sharedPreferences.getBoolean(CONST_IS_FIRST_USE,true);
     }
 
 
