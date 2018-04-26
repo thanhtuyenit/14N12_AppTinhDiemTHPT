@@ -2,6 +2,7 @@ package com.android.a14n12.tinhdiemthpt.Database;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -54,6 +55,7 @@ public class MySharedPreferences {
     public void setTotalScore(Float score) {
         editor.putFloat(CONST_TOTAL_SCORE, score);
         editor.commit();
+        Log.d("TAG", "setTotalScore: "+score);
     }
 
     public String getName() {

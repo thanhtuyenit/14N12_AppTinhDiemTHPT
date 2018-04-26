@@ -2,33 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
         android:id="@+id/ln_main"
-        android:layout_margin="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
         android:gravity="center"
-        android:layout_height="100dp">
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/tv_monhoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/tv_monhoc"
             android:text="Toán"
-            android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/text_size_small"/>
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_diem_tb"
             android:layout_width="match_parent"
-            android:gravity="center"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_light"
+            android:gravity="center"
             android:text="8.0"
-            android:textSize="@dimen/text_size_small"/>
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 
 

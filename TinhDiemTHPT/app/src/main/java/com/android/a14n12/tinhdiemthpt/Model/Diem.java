@@ -16,6 +16,13 @@ public class Diem {
         this.diem = diem;
     }
 
+    public Diem(int maMonHoc, int hocKi, int heSO, Float diem) {
+        this.maMonHoc = maMonHoc;
+        this.hocKi = hocKi;
+        this.heSO = heSO;
+        this.diem = diem;
+    }
+
     public int getMaDiem() {
         return maDiem;
     }

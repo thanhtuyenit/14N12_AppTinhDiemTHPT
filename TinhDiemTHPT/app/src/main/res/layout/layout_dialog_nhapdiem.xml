@@ -38,6 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:text="Hệ số 1"
                     android:textSize="@dimen/text_size_small" />
 
@@ -119,7 +120,7 @@
                 android:gravity="right"
                 android:id="@+id/edt_nhap_diem"
                 android:layout_marginTop="@dimen/margin_small"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:lines="1"
                 android:textColor="@color/color_textEdit"
                 android:textSize="@dimen/text_size_small"

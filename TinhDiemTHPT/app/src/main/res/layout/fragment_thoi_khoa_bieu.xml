@@ -1,13 +1,1375 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.android.a14n12.tinhdiemthpt.Fragments.ThoiKhoaBieuFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FRAGMENT THOI KHOA BIEU" />
 
-</FrameLayout>
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="     "
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="T2"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T3"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T4"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T5"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T6"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T7"
+                android:textColor="@color/color_textEdit"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/textViewCN"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="CN"
+                android:textColor="@color/color_textEditRed"
+                android:textSize="@dimen/text_size_medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@color/color_textEdit" />
+
+    </TableLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/sche_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:id="@+id/tableRows0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="8"
+                        android:background="@color/color_textEdit"
+                        android:gravity="center"
+                        android:text="Buổi sáng"
+                        android:enabled="false"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_large" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews11"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 1"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews12"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews13"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews14"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews15"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews16"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews17"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews18"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews21"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 2"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews22"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews23"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews24"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews25"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews26"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews27"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews28"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews31"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 3"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews32"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews33"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews34"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews35"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews36"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews37"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews38"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews41"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 4"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews42"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews43"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews44"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews45"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews46"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews47"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews48"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews51"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 5"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews52"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews53"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews54"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews55"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews56"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews57"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews58"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRows6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViews61"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 6"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews62"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews63"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews64"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews65"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews66"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews67"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViews68"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="8"
+                        android:background="@color/color_textEdit"
+                        android:gravity="center"
+                        android:text="Buổi chiều"
+                        android:enabled="false"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_large" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc11"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 1"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc12"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc13"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc14"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc15"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc16"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc17"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc18"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc21"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 2"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc22"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc23"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc24"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc25"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc26"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc27"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc28"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc31"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 3"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc32"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc33"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc34"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc35"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc36"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc37"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc38"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc41"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 4"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc42"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc43"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc44"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc45"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc46"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc47"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc48"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc51"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 5"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc52"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc53"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc54"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc55"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc56"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc57"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc58"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowc6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewc61"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 6"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc62"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc63"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc64"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc65"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc66"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc67"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewc68"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowt0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="8"
+                        android:background="@color/color_textEdit"
+                        android:gravity="center"
+                        android:text="Buổi tối"
+                        android:enabled="false"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_large" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewt11"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 1"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt12"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt13"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt14"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt15"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt16"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt17"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt18"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewt21"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 2"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt22"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt23"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt24"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt25"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt26"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt27"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt28"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewt31"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="Tiết 3"
+                        android:enabled="false"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt32"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt33"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt34"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt35"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt36"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt37"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/textViewt38"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:textColor="@color/color_textEdit"
+                        android:textSize="@dimen/text_size_small" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

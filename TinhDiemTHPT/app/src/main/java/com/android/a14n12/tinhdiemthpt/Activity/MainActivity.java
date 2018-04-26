@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -19,7 +20,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -35,12 +35,16 @@ import com.android.a14n12.tinhdiemthpt.Fragments.SuKienFragment;
 import com.android.a14n12.tinhdiemthpt.Fragments.ThoiKhoaBieuFragment;
 import com.android.a14n12.tinhdiemthpt.Fragments.TongQuanFragment;
 import com.android.a14n12.tinhdiemthpt.Fragments.TrangChuFragment;
+import com.android.a14n12.tinhdiemthpt.Model.DiemTBMon;
 import com.android.a14n12.tinhdiemthpt.Model.MonHoc;
 import com.android.a14n12.tinhdiemthpt.R;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    public  FragmentTransaction transaction;
+    public  FragmentManager fragmentManager;
     private static final String TAG = "MainActivity";
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -216,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tvDongy = dialogEditInfo.findViewById(R.id.tv_dong_y);
         final Spinner spinner = dialogEditInfo.findViewById(R.id.spinner_class);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arr);
-        adapter.setDropDownViewResource (android.R.layout.simple_list_item_single_choice);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spinner.setAdapter(adapter);
         final RadioGroup radioGroup = dialogEditInfo.findViewById(R.id.radioGroup);
         final RadioButton radioButton1 = dialogEditInfo.findViewById(R.id.rbt_hoc_ky1);
@@ -233,59 +237,66 @@ public class MainActivity extends AppCompatActivity {
             spinner.setSelection(1);
         } else {
             spinner.setSelection(2);
-    }
-
-        tvHuy.setOnClickListener(new View.OnClickListener()
-
-    {
-        @Override
-        public void onClick (View view){
-        dialogEditInfo.dismiss();
-    }
-    });
-        tvDongy.setOnClickListener(new View.OnClickListener()
-
-    {
-        @Override
-        public void onClick (View view){
-        mySharedPreferences.setName(edtName.getText().toString());
-        nav_tv_name.setText(edtName.getText().toString());
-        if (radioGroup.getCheckedRadioButtonId() == R.id.rbt_hoc_ky1) {
-            mySharedPreferences.setSemester(1);
-            nav_tv_semester.setText(getResources().getString(R.string.str_semester) + mySharedPreferences.getSemester());
-        } else {
-            mySharedPreferences.setSemester(2);
-            nav_tv_semester.setText(getResources().getString(R.string.str_semester) + mySharedPreferences.getSemester());
         }
-        switch (spinner.getSelectedItemPosition()) {
-            case 0:
-                Log.d(TAG, "onClick: 0");
-                mySharedPreferences.setClassName("10");
-                break;
-            case 1:
-                Log.d(TAG, "onClick: 1");
-                mySharedPreferences.setClassName("11");
-                break;
-            case 2:
-                Log.d(TAG, "onClick: 2");
-                mySharedPreferences.setClassName("12");
-                break;
-        }
-        nav_tv_class.setText(getResources().getString(R.string.str_class_name) + mySharedPreferences.getClassName());
-        Toast.makeText(getApplicationContext(), R.string.str_update_success, Toast.LENGTH_SHORT).show();
-        dialogEditInfo.dismiss();
-    }
-    });
+
+        tvHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogEditInfo.dismiss();
+            }
+        });
+        tvDongy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mySharedPreferences.setName(edtName.getText().toString());
+                nav_tv_name.setText(edtName.getText().toString());
+                if (radioGroup.getCheckedRadioButtonId() == R.id.rbt_hoc_ky1) {
+                    mySharedPreferences.setSemester(1);
+                    nav_tv_semester.setText(getResources().getString(R.string.str_semester) + mySharedPreferences.getSemester());
+                } else {
+                    mySharedPreferences.setSemester(2);
+                    nav_tv_semester.setText(getResources().getString(R.string.str_semester) + mySharedPreferences.getSemester());
+                }
+                switch (spinner.getSelectedItemPosition()) {
+                    case 0:
+                        Log.d(TAG, "onClick: 0");
+                        mySharedPreferences.setClassName("10");
+                        break;
+                    case 1:
+                        Log.d(TAG, "onClick: 1");
+                        mySharedPreferences.setClassName("11");
+                        break;
+                    case 2:
+                        Log.d(TAG, "onClick: 2");
+                        mySharedPreferences.setClassName("12");
+                        break;
+                }
+                nav_tv_class.setText(getResources().getString(R.string.str_class_name) + mySharedPreferences.getClassName());
+                Toast.makeText(getApplicationContext(), R.string.str_update_success, Toast.LENGTH_SHORT).show();
+                dialogEditInfo.dismiss();
+            }
+        });
         dialogEditInfo.show();
-}
+    }
 
     //Mở fragment
     private void openFragment(final Fragment fragment) {
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        fragmentManager = getFragmentManager();
+        transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_main, fragment);
-//        transaction.addToBackStack(null);
         transaction.commit();
 
     }
+
+
+//    public void refreshFragment(Fragment fragment){
+//        Log.d(TAG, "refreshFragment: ");
+//        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//        fragmentTransaction.detach(fragment);
+//        fragmentTransaction.attach(fragment);
+//        fragmentTransaction.commit();
+//    }
+
+
+
 }
