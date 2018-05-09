@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_medium">
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/margin_small"
+            android:background="@color/color_editTextDiem"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/text_size_small"
+            android:text="Điểm hệ số 1"
+            />
+        <ImageView
+            android:id="@+id/img_up_down"
+            android:layout_width="@dimen/width_icon"
+            android:layout_height="@dimen/width_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_drop_down"/>
+    </RelativeLayout>
+
+</LinearLayout>

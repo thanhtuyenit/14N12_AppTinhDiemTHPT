@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.android.a14n12.tinhdiemthpt.Model.Diem;
-import com.android.a14n12.tinhdiemthpt.Model.DiemTBMon;
-import com.android.a14n12.tinhdiemthpt.Model.MonHoc;
+import com.android.a14n12.tinhdiemthpt.Model.ScheduleTable;
+import com.android.a14n12.tinhdiemthpt.Model.Score;
+import com.android.a14n12.tinhdiemthpt.Model.Subject;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "TINHDIEMTHPT.sqlite";
     public static final String TB_MONHOC = "TB_MONHOC";
     public static final String TB_DIEM = "TB_DIEM";
-    public static final String TB_DIEMTBMON = "TB_DIEM_TB_MON";
+//    public static final String TB_DIEMTBMON = "TB_DIEM_TB_MON";
     public static final String TB_THOIKHOABIEU = "TB_THOI_KHOA_BIEU";
     public static final String TB_SUKIEN = "TB_SU_KIEN";
 
@@ -46,6 +46,7 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String TB_THOIKHOABIEU_BUOI = "Buoi";
     public static final String TB_THOIKHOABIEU_TIET = "SoTiet";
     public static final String TB_THOIKHOABIEU_MONHOC = "TenMonHoc";
+    public static final String TB_THOIKHOABIEU_NGAY = "Ngay";
 
     public static final String TB_SUKIEN_MASUKIEN = "MaSuKien";
     public static final String TB_SUKIEN_TENSUKIEN = "TenSuKien";
@@ -126,16 +127,16 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
 
     }
 
-    //Đây là 1 ví dụ hàm Querry tất cả Môn học từ Table TB_MONHOC trong database
-    public ArrayList<MonHoc> getMonHoc() {
-        ArrayList<MonHoc> list = new ArrayList<>();
+    //get all Subject
+    public ArrayList<Subject> getMonHoc() {
+        ArrayList<Subject> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String queryAllchar = "SELECT * FROM " + TB_MONHOC;
         Cursor cs = db.rawQuery(queryAllchar, null);
         try {
             cs.moveToFirst();
             while (cs.isAfterLast() == false) {
-                list.add(new MonHoc(cs.getInt(0), cs.getString(1)));
+                list.add(new Subject(cs.getInt(0), cs.getString(1)));
                 cs.moveToNext();
             }
         } finally {
@@ -146,81 +147,15 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
         return list;
     }
 
-    //Lấy tất vả điểm TB của cả học kì
-    public ArrayList<DiemTBMon> getDiemTB(int hocKi) {
-        ArrayList<DiemTBMon> list = new ArrayList<>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        String queryAllchar = "SELECT * FROM " + TB_DIEMTBMON + " WHERE " + TB_DIEMTBMON_HOCKI + " = " + hocKi;
-        Cursor cs = db.rawQuery(queryAllchar, null);
-        try {
-            cs.moveToFirst();
-            while (!cs.isAfterLast()) {
-                list.add(new DiemTBMon(cs.getInt(0), cs.getInt(2), cs.getFloat(1)));
-                cs.moveToNext();
-            }
-        } finally {
-            if (cs != null) {
-                cs.close();
-            }
-        }
-        return list;
-    }
-
-    //Lấy ra điểm TB theo từng môn học và học kì
-    public Float getDiemTBfromIdMonhoc(int id_monhoc, int hocki) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TB_DIEMTBMON + " WHERE " + TB_DIEMTBMON_MAMONHOC + " = " + id_monhoc + " AND " + TB_DIEMTBMON_HOCKI + " = " + hocki;
-        Log.d("TAG", "getDiemTBfromIdMonhoc: " + query);
-        Cursor cs = db.rawQuery(query, null);
-
-        Float kq = null;
-        try {
-            if (cs.getCount() >= 1) {
-                while (cs.moveToNext()) {
-                    kq = cs.getFloat(1);
-                }
-            }
-
-
-        } finally {
-            if (cs != null) {
-                cs.close();
-            }
-        }
-        return kq;
-    }
-
-    //Chèn vào bảng Diểm Tb
-    public Boolean insertDiemTB(DiemTBMon diemTBMon) {
-        SQLiteDatabase database = this.getReadableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("MaMonHoc", diemTBMon.getMaMonHoc());
-        values.put("DiemTB", diemTBMon.getDiemTB());
-        values.put("HocKi", diemTBMon.getHocKi());
-        long i = database.insert(TB_DIEMTBMON, null, values);
-        return (i != 0);
-    }
-
-    //Chỉnh sửa dữ liệu bảng DiemTB theo Mon hoc
-    public boolean updateDiemTB(DiemTBMon diemTBMon) {
-        SQLiteDatabase database = this.getReadableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("DiemTB", diemTBMon.getDiemTB());
-        int i = database.update(TB_DIEMTBMON, values, " MaMonHoc = ? AND HocKi = ?",
-                new String[]{String.valueOf(diemTBMon.getMaMonHoc()), String.valueOf(diemTBMon.getHocKi())});
-        return (i != 0);
-    }
-
-
-    public ArrayList<Diem> getDiemTheoMonHoc(int maMonHoc, int hocKi) {
-        ArrayList<Diem> list = new ArrayList<>();
+    public ArrayList<Score> getDiemTheoMonHoc(int maMonHoc, int hocKi) {
+        ArrayList<Score> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + hocKi + " AND " + TB_DIEM_MAMONHOC + " = " + maMonHoc;
         Cursor cs = db.rawQuery(queryAllchar, null);
         try {
             cs.moveToFirst();
             while (!cs.isAfterLast()) {
-                list.add(new Diem(cs.getInt(0), cs.getInt(1), cs.getInt(3), cs.getInt(2), cs.getFloat(4)));
+                list.add(new Score(cs.getInt(0), cs.getInt(1), cs.getInt(3), cs.getInt(2), cs.getFloat(4)));
 //                Log.d("TAG", "getDiemTheoMonHoc: ma mon=> "+cs.getInt(1)+" he so +> "+cs.getInt(2)+" diem => "+cs.getFloat(4));
                 cs.moveToNext();
             }
@@ -232,26 +167,155 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
         return list;
     }
 
-    //Chèn vào bảng Diểm
-    public Boolean insertDiem(Diem diem) {
+    //insert into Score table Db
+    public Boolean insertDiem(Score score) {
         SQLiteDatabase database = this.getReadableDatabase();
         ContentValues values = new ContentValues();
-        values.put("MaMonHoc", diem.getMaMonHoc());
-        values.put("HeSo", diem.getHeSO());
-        values.put("HocKi", diem.getHocKi());
-        values.put("Diem", diem.getDiem());
+        values.put("MaMonHoc", score.getMaMonHoc());
+        values.put("HeSo", score.getHeSO());
+        values.put("HocKi", score.getHocKi());
+        values.put("Diem", score.getDiem());
         long i = database.insert(TB_DIEM, null, values);
-        return (i != 0);
+        Log.d("TAG", "insertDiem: " + i);
+        return (i > 0);
     }
 
-    //Chỉnh sửa dữ liệu cho bảng Diem
-    public boolean updateDiem(Diem diem) {
+//    update Score by id
+    public boolean updateScoreByid(Score score) {
         SQLiteDatabase database = this.getReadableDatabase();
         ContentValues values = new ContentValues();
-        values.put("Diem", diem.getDiem());
-        int i = database.update(TB_DIEM, values, " MaDiem = ? ",
-                new String[]{String.valueOf(diem.getMaDiem())});
-        return i != 0;
+        values.put(TB_DIEM_DIEM, score.getDiem());
+        int i = database.update(TB_DIEM, values, " "+TB_DIEM_MADIEM+" = ? ",
+                new String[]{String.valueOf(score.getMaDiem())});
+        Log.d("jhfjdhs", "updateScoreByid: "+i);
+        return i > 0;
     }
 
+
+    //Get score by id subject and coefficient
+    public ArrayList<Score> getScoreByIdSubjectAndCoefficient(int idSubject, int semester, int coefficient) {
+        ArrayList<Score> list = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + semester + " AND " + TB_DIEM_MAMONHOC + " = " + idSubject + " AND " + TB_DIEM_HESO + " = " + coefficient;
+        Cursor cs = db.rawQuery(queryAllchar, null);
+        try {
+            cs.moveToFirst();
+            while (!cs.isAfterLast()) {
+                list.add(new Score(cs.getInt(0), cs.getInt(1), cs.getInt(3), cs.getInt(2), cs.getFloat(4)));
+//                Log.d("TAG", "getDiemTheoMonHoc: madiem=> "+cs.getInt(0)+" he so +> "+cs.getInt(2)+" diem => "+cs.getFloat(4));
+                cs.moveToNext();
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return list;
+    }
+
+    //get name subject by id subject
+    public String getNameSubject(int idSubject) {
+        String name = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_MONHOC + " WHERE " + TB_MONHOC_MAMONHOC + " = " + idSubject;
+        Cursor cs = db.rawQuery(queryAllchar, null);
+        try {
+            cs.moveToFirst();
+            while (!cs.isAfterLast()) {
+                name = cs.getString(1);
+                Log.d("áhjhkjashja", "getNameSubject: "+ name);
+                cs.moveToNext();
+
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return name;
+    }
+
+    //Update name subject
+    public boolean updateNameSubject(Subject subject) {
+        SQLiteDatabase database = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TB_MONHOC_TENMONHOC, subject.getTenMonHoc());
+        int i = database.update(TB_MONHOC, values, " "+TB_MONHOC_MAMONHOC+" = ? ",
+                new String[]{String.valueOf(subject.getMaMonHoc())});
+        return i > 0;
+    }
+
+    //Delete score by id
+    public void deleteScoreById(Score score) {
+        SQLiteDatabase database = this.getReadableDatabase();
+        String queryAllchar = "DELETE FROM " + TB_DIEM + " WHERE " + TB_DIEM_MADIEM + " = " + score.getMaDiem();
+        database.execSQL(queryAllchar);
+
+    }
+
+    //get Schedule table
+    public ArrayList<ScheduleTable> getScheduleTable() {
+        ArrayList<ScheduleTable> list = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_THOIKHOABIEU ;
+        Cursor cs = db.rawQuery(queryAllchar, null);
+        try {
+            cs.moveToFirst();
+            while (cs.isAfterLast() == false) {
+                list.add(new ScheduleTable(cs.getInt(0),cs.getInt(1),cs.getInt(2),cs.getString(3),cs.getInt(4)));
+                cs.moveToNext();
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return list;
+    }
+
+    //Select shedule by time, period, day
+    public ScheduleTable getScheduleBytime(int time, int day, int period) {
+        ScheduleTable scheduleTable = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_THOIKHOABIEU + " WHERE " + TB_THOIKHOABIEU_BUOI + " = " + time +
+                " AND "+TB_THOIKHOABIEU_TIET + " = "+ period+" AND "+TB_THOIKHOABIEU_NGAY +" = "+day;
+        Cursor cs = db.rawQuery(queryAllchar, null);
+        try {
+            cs.moveToFirst();
+            while (!cs.isAfterLast()) {
+                scheduleTable = new ScheduleTable(cs.getInt(0),cs.getInt(1),cs.getInt(2),cs.getString(3),cs.getInt(4));
+                Log.d("áhjhkjashja", "getScheduleBytime: "+ scheduleTable.getNameSubject());
+                cs.moveToNext();
+
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return scheduleTable;
+    }
+
+    //insert schedule to db
+    public Boolean insertSchedule(ScheduleTable scheduleTable) {
+        SQLiteDatabase database = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TB_THOIKHOABIEU_TIET, scheduleTable.getNumberOfPeriod());
+        values.put(TB_THOIKHOABIEU_BUOI, scheduleTable.getTime());
+        values.put(TB_THOIKHOABIEU_NGAY, scheduleTable.getDay());
+        values.put(TB_THOIKHOABIEU_MONHOC, scheduleTable.getNameSubject());
+        long i = database.insert(TB_THOIKHOABIEU, null, values);
+        Log.d("TAG", "insertSchedule: " + i);
+        return (i > 0);
+    }
+
+    //Update schedule
+    public boolean updateSchedule(ScheduleTable scheduleTable) {
+        SQLiteDatabase database = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TB_THOIKHOABIEU_MONHOC, scheduleTable.getNameSubject());
+        int i = database.update(TB_THOIKHOABIEU, values, " "+TB_THOIKHOABIEU_ID+" = ? ",
+                new String[]{String.valueOf(scheduleTable.getId())});
+        return i > 0;
+    }
 }

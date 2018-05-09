@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.a14n12.tinhdiemthpt">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:allowBackup="true"
@@ -15,13 +17,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.DetailedOutcomesActivity" />
+        <activity android:name=".Activity.DetailActivity"></activity>
+        <receiver android:name=".Service.AlarmReceiver" />
 
-        </activity>
-        <activity android:name=".Activity.LoginActivity">
-
-        </activity>
-        <activity android:name=".Activity.NhapDiemActivity">
-        </activity>
     </application>
 
 </manifest>

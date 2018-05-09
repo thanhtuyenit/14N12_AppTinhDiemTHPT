@@ -7,17 +7,27 @@
     <string name="menu_bieu_do">Biểu đồ, thống kê</string>
     <string name="menu_su_kien">Sự kiện</string>
     <string name="menu_cai_dat">Cài đặt</string>
+    <string name="st_chi_tiet">Chi tiết</string>
 
     <string name="str_class_name">Lớp:&#160;</string>
     <string name="str_semester">Học kì: &#160; </string>
     <string name="str_update_success">Cập nhật thông tin thành công!</string>
+    <string name="str_update_notsuccess">Cập nhật thông tin không thành công!</string>
+    <string name="str_update_null">Bạn phải nhập dữ liệu!</string>
     <string name="str_class">LỚP</string>
     <string name="str_text_semester">HỌC KÌ</string>
     <string name="str_text_diemcacmon">Điểm các môn</string>
+
+    <string name="str_text_diemheso1">Điểm hệ số 1</string>
+    <string name="str_text_diemheso2">Điểm hệ số 2</string>
+    <string name="str_text_diemheso3">Điểm hệ số 3</string>
+    <string name="str_text_edit_name">Sửa tên môn học</string>
 
     <integer-array name="background">
         <item>@drawable/bg_item_gridview</item>
         <item>@drawable/bg_item_gridview_1</item>
         <item>@drawable/bg_item_gridview</item>
     </integer-array>
+
+
 </resources>

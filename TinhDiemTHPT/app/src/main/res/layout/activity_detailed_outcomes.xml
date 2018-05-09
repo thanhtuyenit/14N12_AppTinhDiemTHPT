@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.a14n12.tinhdiemthpt.Activity.DetailedOutcomesActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/st_chi_tiet"
+        app:titleTextColor="@color/color_white">
+
+        <LinearLayout
+            android:id="@+id/ln_btn_edit"
+            android:layout_width="@dimen/width_over_icon"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="@dimen/width_icon"
+                android:layout_height="@dimen/width_icon"
+                android:background="@drawable/ic_edit"
+                android:text=""
+                android:textColor="#FFF"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_btn_add"
+            android:layout_width="@dimen/width_over_icon"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="@dimen/width_icon"
+                android:layout_height="@dimen/width_icon"
+                android:background="@drawable/ic_add_black_24dp"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_icon_result"
+            android:paddingBottom="@dimen/margin_small"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:gravity="center"
+                android:text="8.8"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/color_white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_result_white1" />
+        </RelativeLayout>
+
+        <ExpandableListView
+            android:id="@+id/explv_score"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:childDivider="@color/colorPrimary"
+            android:divider="@color/color_editTextDiem"
+            android:dividerHeight="1dp"
+            android:groupIndicator="@null"
+            android:footerDividersEnabled="true" />
+    </LinearLayout>
+</LinearLayout>

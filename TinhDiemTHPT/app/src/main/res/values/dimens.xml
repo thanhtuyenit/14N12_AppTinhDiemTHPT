@@ -10,5 +10,12 @@
     <dimen name="text_size_medium">18sp</dimen>
     <dimen name="text_size_large">20sp</dimen>
 
+    <dimen name="width_icon">30dp</dimen>
+    <dimen name="width_over_icon">50dp</dimen>
+    <dimen name="height_icon_result">80dp</dimen>
+
+
+
+
     <dimen name="text_editText_NhapDiem">40sp</dimen>
 </resources>

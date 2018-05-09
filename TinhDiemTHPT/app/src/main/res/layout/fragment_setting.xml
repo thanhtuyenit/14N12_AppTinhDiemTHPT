@@ -5,9 +5,27 @@
     tools:context="com.android.a14n12.tinhdiemthpt.Fragments.SettingFragment">
 
     <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_large"
+    android:gravity="center">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="FRAGMENT CAI DAT" />
-
+        android:textColor="@color/color_text"
+        android:text="Bật nhắc nhở"
+        android:gravity="center|left"
+        android:padding="@dimen/margin_small"
+        android:textSize="@dimen/text_size_small"
+        />
+    <CheckBox
+        android:id="@+id/cbx_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:enabled="true"
+        android:checked="false"/>
+</RelativeLayout>
 </FrameLayout>

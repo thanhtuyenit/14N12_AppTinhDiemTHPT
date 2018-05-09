@@ -4,11 +4,11 @@ package com.android.a14n12.tinhdiemthpt.Model;
  * Created by Nhi on 3/19/2018.
  */
 
-public class Diem {
+public class Score {
     private int maDiem, maMonHoc, hocKi, heSO;
     private Float diem;
 
-    public Diem(int maDiem, int maMonHoc, int hocKi, int heSO, Float diem) {
+    public Score(int maDiem, int maMonHoc, int hocKi, int heSO, Float diem) {
         this.maDiem = maDiem;
         this.maMonHoc = maMonHoc;
         this.hocKi = hocKi;
@@ -16,7 +16,7 @@ public class Diem {
         this.diem = diem;
     }
 
-    public Diem(int maMonHoc, int hocKi, int heSO, Float diem) {
+    public Score(int maMonHoc, int hocKi, int heSO, Float diem) {
         this.maMonHoc = maMonHoc;
         this.hocKi = hocKi;
         this.heSO = heSO;

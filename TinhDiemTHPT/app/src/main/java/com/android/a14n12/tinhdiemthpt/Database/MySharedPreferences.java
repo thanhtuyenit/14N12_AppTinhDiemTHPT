@@ -18,6 +18,7 @@ public class MySharedPreferences {
     private String CONST_SEMESTER = "Const_semester";
     private String CONST_TOTAL_SCORE = "Const_total_score";
     private String CONST_IS_FIRST_USE = "is_first_use";
+    private String CONST_IS_SET_ALARM = "is_set_alarm";
     private static MySharedPreferences instance;
     private Context context;
     private SharedPreferences sharedPreferences;
@@ -62,6 +63,10 @@ public class MySharedPreferences {
          editor.putBoolean(CONST_IS_FIRST_USE, isFirstUse);
          editor.commit();
      }
+    public void setIsSetAlarm(Boolean isSetAlarm){
+        editor.putBoolean(CONST_IS_SET_ALARM, isSetAlarm);
+        editor.commit();
+    }
 
     public String getName() {
         return sharedPreferences.getString(CONST_NAME, "");
@@ -82,6 +87,11 @@ public class MySharedPreferences {
     public Boolean getIsFirstUse(){
         return sharedPreferences.getBoolean(CONST_IS_FIRST_USE,true);
     }
+
+    public Boolean getIsSetAlarm(){
+        return sharedPreferences.getBoolean(CONST_IS_SET_ALARM,true);
+    }
+
 
 
 }

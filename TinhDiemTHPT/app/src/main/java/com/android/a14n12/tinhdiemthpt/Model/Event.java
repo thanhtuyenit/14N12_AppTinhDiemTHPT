@@ -6,12 +6,12 @@ import java.util.Date;
  * Created by Nhi on 3/19/2018.
  */
 
-public class SuKien {
+public class Event {
     private int maSuKien, loaiSuKien, loaiKiemTra, buoi, soTiet;
     private String tenSuKien, diaDiem, ghiChu;
     private Date thoiGianBD;
 
-    public SuKien(int maSuKien, int loaiSuKien,String tenSuKien, String diaDiem, String ghiChu, Date thoiGianBD, int loaiKiemTra, int buoi, int soTiet) {
+    public Event(int maSuKien, int loaiSuKien, String tenSuKien, String diaDiem, String ghiChu, Date thoiGianBD, int loaiKiemTra, int buoi, int soTiet) {
         this.maSuKien = maSuKien;
         this.loaiSuKien = loaiSuKien;
         this.loaiKiemTra = loaiKiemTra;

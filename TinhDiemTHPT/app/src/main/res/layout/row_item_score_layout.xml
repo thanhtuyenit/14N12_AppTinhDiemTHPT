@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_medium">
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_text"
+            android:textStyle="bold"
+            android:text="8.0"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/margin_medium"
+
+            />
+        <LinearLayout
+            android:id="@+id/ln_btn_delete"
+            android:layout_width="@dimen/width_over_icon"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_delete"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_btn_edit"
+            android:layout_toLeftOf="@id/ln_btn_delete"
+            android:layout_width="@dimen/width_over_icon"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_edit_black"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_editTextDiem"/>
+
+</LinearLayout>

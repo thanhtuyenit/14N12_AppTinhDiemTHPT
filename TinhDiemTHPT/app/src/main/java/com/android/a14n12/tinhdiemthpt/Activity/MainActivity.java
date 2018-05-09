@@ -4,15 +4,14 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,15 +30,11 @@ import com.android.a14n12.tinhdiemthpt.Database.MySharedPreferences;
 import com.android.a14n12.tinhdiemthpt.Fragments.BieuDoFragment;
 import com.android.a14n12.tinhdiemthpt.Fragments.DiemDuKienFragment;
 import com.android.a14n12.tinhdiemthpt.Fragments.SettingFragment;
-import com.android.a14n12.tinhdiemthpt.Fragments.SuKienFragment;
-import com.android.a14n12.tinhdiemthpt.Fragments.ThoiKhoaBieuFragment;
-import com.android.a14n12.tinhdiemthpt.Fragments.TongQuanFragment;
-import com.android.a14n12.tinhdiemthpt.Fragments.TrangChuFragment;
-import com.android.a14n12.tinhdiemthpt.Model.DiemTBMon;
-import com.android.a14n12.tinhdiemthpt.Model.MonHoc;
+import com.android.a14n12.tinhdiemthpt.Fragments.EventFragment;
+import com.android.a14n12.tinhdiemthpt.Fragments.ScheduleTableFragment;
+import com.android.a14n12.tinhdiemthpt.Fragments.OverviewFragment;
+import com.android.a14n12.tinhdiemthpt.Fragments.HomeFragment;
 import com.android.a14n12.tinhdiemthpt.R;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-        openFragment(new TrangChuFragment());
+        openFragment(new HomeFragment());
         connectDB();
 
         //Vi dụ 1 trường hợp lấy dữ kiệu từ database
-//        ArrayList<MonHoc> listMonHoc = mDatabase.getMonHoc();
+//        ArrayList<Subject> listMonHoc = mDatabase.getMonHoc();
 //        for (int i = 0; i < listMonHoc.size(); i++)
 //            System.out.println(listMonHoc.get(i).getTenMonHoc());
 
@@ -94,22 +89,22 @@ public class MainActivity extends AppCompatActivity {
                 toolbar.setTitle(item.getTitle().toString());
                 switch (item.getItemId()) {
                     case R.id.nav_trangChu:
-                        openFragment(new TrangChuFragment());
+                        openFragment(new HomeFragment());
                         break;
                     case R.id.nav_tong_quan:
-                        openFragment(new TongQuanFragment());
+                        openFragment(new OverviewFragment());
                         break;
                     case R.id.nav_diem_du_kien:
                         openFragment(new DiemDuKienFragment());
                         break;
                     case R.id.nav_thoi_khoa_bieu:
-                        openFragment(new ThoiKhoaBieuFragment());
+                        openFragment(new ScheduleTableFragment());
                         break;
                     case R.id.nav_bieu_do:
                         openFragment(new BieuDoFragment());
                         break;
                     case R.id.nav_su_kien:
-                        openFragment(new SuKienFragment());
+                        openFragment(new EventFragment());
                         break;
                     case R.id.nav_cai_dat:
                         openFragment(new SettingFragment());
