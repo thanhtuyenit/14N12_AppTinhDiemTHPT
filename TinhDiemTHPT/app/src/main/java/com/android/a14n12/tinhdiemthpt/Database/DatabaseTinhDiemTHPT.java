@@ -25,7 +25,6 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "TINHDIEMTHPT.sqlite";
     public static final String TB_MONHOC = "TB_MONHOC";
     public static final String TB_DIEM = "TB_DIEM";
-//    public static final String TB_DIEMTBMON = "TB_DIEM_TB_MON";
     public static final String TB_THOIKHOABIEU = "TB_THOI_KHOA_BIEU";
     public static final String TB_SUKIEN = "TB_SU_KIEN";
 
@@ -38,9 +37,6 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String TB_DIEM_HOCKI = "HocKi";
     public static final String TB_DIEM_DIEM = "Diem";
 
-    public static final String TB_DIEMTBMON_MAMONHOC = "MaMonHoc";
-    public static final String TB_DIEMTBMON_DIEMTB = "DiemTB";
-    public static final String TB_DIEMTBMON_HOCKI = "HocKi";
 
     public static final String TB_THOIKHOABIEU_ID = "Id";
     public static final String TB_THOIKHOABIEU_BUOI = "Buoi";
@@ -48,15 +44,6 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     public static final String TB_THOIKHOABIEU_MONHOC = "TenMonHoc";
     public static final String TB_THOIKHOABIEU_NGAY = "Ngay";
 
-    public static final String TB_SUKIEN_MASUKIEN = "MaSuKien";
-    public static final String TB_SUKIEN_TENSUKIEN = "TenSuKien";
-    public static final String TB_SUKIEN_LOAISUKIEN = "LoaiSuKien";
-    public static final String TB_SUKIEN_THOIGIANBD = "ThoiGianBD";
-    public static final String TB_SUKIEN_DIADIEM = "DiaDiem";
-    public static final String TB_SUKIEN_GHICHU = "GhiChu";
-    public static final String TB_SUKIEN_LOAIKIEMTRA = "LoaiKiemTra";
-    public static final String TB_SUKIEN_BUOI = "BuoiKiemTra";
-    public static final String TB_SUKIEN_TIET = "TietKiemTra";
     Context context;
     String path = "";
 
@@ -147,10 +134,10 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
         return list;
     }
 
-    public ArrayList<Score> getDiemTheoMonHoc(int maMonHoc, int hocKi) {
+    public ArrayList<Score> getDiemTheoMonHoc(int maMonHoc, int hocKi,int lop) {
         ArrayList<Score> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + hocKi + " AND " + TB_DIEM_MAMONHOC + " = " + maMonHoc;
+        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + hocKi + " AND " + TB_DIEM_MAMONHOC + " = " + maMonHoc + " AND Lop = "+lop;
         Cursor cs = db.rawQuery(queryAllchar, null);
         try {
             cs.moveToFirst();
@@ -168,13 +155,14 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
     }
 
     //insert into Score table Db
-    public Boolean insertDiem(Score score) {
+    public Boolean insertDiem(Score score,int lop) {
         SQLiteDatabase database = this.getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put("MaMonHoc", score.getMaMonHoc());
         values.put("HeSo", score.getHeSO());
         values.put("HocKi", score.getHocKi());
         values.put("Diem", score.getDiem());
+        values.put("Lop", lop);
         long i = database.insert(TB_DIEM, null, values);
         Log.d("TAG", "insertDiem: " + i);
         return (i > 0);
@@ -193,10 +181,10 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
 
 
     //Get score by id subject and coefficient
-    public ArrayList<Score> getScoreByIdSubjectAndCoefficient(int idSubject, int semester, int coefficient) {
+    public ArrayList<Score> getScoreByIdSubjectAndCoefficient(int idSubject, int semester, int coefficient,int numclass) {
         ArrayList<Score> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + semester + " AND " + TB_DIEM_MAMONHOC + " = " + idSubject + " AND " + TB_DIEM_HESO + " = " + coefficient;
+        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_HOCKI + " = " + semester + " AND " + TB_DIEM_MAMONHOC + " = " + idSubject + " AND " + TB_DIEM_HESO + " = " + coefficient+ " AND Lop = "+numclass;
         Cursor cs = db.rawQuery(queryAllchar, null);
         try {
             cs.moveToFirst();
@@ -317,5 +305,33 @@ public class DatabaseTinhDiemTHPT extends SQLiteOpenHelper {
         int i = database.update(TB_THOIKHOABIEU, values, " "+TB_THOIKHOABIEU_ID+" = ? ",
                 new String[]{String.valueOf(scheduleTable.getId())});
         return i > 0;
+    }
+
+    public ArrayList<Score> getDiemTBMon(int maMonHoc, int HocKi,int lop) {
+        ArrayList<Score> list = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String queryAllchar = "SELECT * FROM " + TB_DIEM + " WHERE " + TB_DIEM_MAMONHOC + " = " + maMonHoc + " AND " + TB_DIEM_HOCKI + " = " + HocKi+ " AND Lop = "+lop;
+        Cursor cs = db.rawQuery(queryAllchar, null);
+        try {
+            cs.moveToFirst();
+            while (!cs.isAfterLast()) {
+                list.add(new Score(cs.getInt(0), cs.getInt(1), cs.getInt(3), cs.getInt(2), cs.getFloat(4)));
+                cs.moveToNext();
+            }
+        } finally {
+            if (cs != null) {
+                cs.close();
+            }
+        }
+        return list;
+    }
+
+    public void deleteAllSchedule(){
+        SQLiteDatabase database = this.getReadableDatabase();
+        String query = "DELETE FROM " + TB_THOIKHOABIEU;
+        database.execSQL(query);
+        Log.d("", "deleteAllSchedule: ");
+        ArrayList<ScheduleTable> list = getScheduleTable();
+        Log.d("", "deleteAllSchedule: list ===> "+list.size());
     }
 }

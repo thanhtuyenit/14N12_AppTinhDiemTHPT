@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/margin_large"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_large"
+                >
+
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chọn số lượng"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:textColor="@color/color_black"
+                    android:textSize="@dimen/text_size_large" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_SoLuong"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:enabled="true"
+                        android:checked="true"
+                        android:text="     1" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     2" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     3" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     4" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     5" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     6" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     7" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     8" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     9" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_SoLuong10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="     10" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_huy_SoLuong"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_medium"
+                        android:text="HỦY"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_dong_y_SoLuong"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_medium"
+                        android:text="ĐỒNG Ý"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</LinearLayout>

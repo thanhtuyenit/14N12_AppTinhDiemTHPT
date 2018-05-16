@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.a14n12.tinhdiemthpt">
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.MainActivity"
+            android:theme="@style/CustomTheme">
+
+        </activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.DetailedOutcomesActivity"
+            android:theme="@style/CustomTheme"/>
+        <activity android:name=".Activity.PDF_Activity"
+            android:theme="@style/CustomTheme"/>
+
+        <receiver android:name=".Service.AlarmReceiver" />
+
+        <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.DetailedOutcomesActivity" />
-        <activity android:name=".Activity.DetailActivity"></activity>
-        <receiver android:name=".Service.AlarmReceiver" />
-
     </application>
 
 </manifest>

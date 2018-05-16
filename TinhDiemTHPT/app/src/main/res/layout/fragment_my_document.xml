@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.a14n12.tinhdiemthpt.Fragments.EventFragment">
+    android:background="@color/color_white"
+    tools:context="com.android.a14n12.tinhdiemthpt.Fragments.MyDocumentFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/lv_document"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FRAGMENT SU KIEN" />
-
+        android:layout_height="match_parent" />
 </FrameLayout>

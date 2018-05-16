@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/color_white"
     tools:context="com.android.a14n12.tinhdiemthpt.Activity.DetailedOutcomesActivity">
 
     <android.support.v7.widget.Toolbar
@@ -29,7 +30,8 @@
                 android:background="@drawable/ic_edit"
                 android:text=""
                 android:textColor="#FFF"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="clickEdit"/>
 
         </LinearLayout>
 
@@ -44,7 +46,8 @@
                 android:layout_width="@dimen/width_icon"
                 android:layout_height="@dimen/width_icon"
                 android:background="@drawable/ic_add_black_24dp"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:onClick="clickAdd"/>
 
         </LinearLayout>
 

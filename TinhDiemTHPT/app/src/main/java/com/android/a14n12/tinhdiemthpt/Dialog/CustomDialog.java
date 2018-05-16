@@ -16,9 +16,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.a14n12.tinhdiemthpt.Activity.DetailedOutcomesActivity;
+import com.android.a14n12.tinhdiemthpt.Activity.MainActivity;
 import com.android.a14n12.tinhdiemthpt.Database.DatabaseTinhDiemTHPT;
 import com.android.a14n12.tinhdiemthpt.Database.MySharedPreferences;
 import com.android.a14n12.tinhdiemthpt.Fragments.HomeFragment;
+import com.android.a14n12.tinhdiemthpt.Model.ScheduleTable;
 import com.android.a14n12.tinhdiemthpt.Model.Score;
 import com.android.a14n12.tinhdiemthpt.Model.Subject;
 import com.android.a14n12.tinhdiemthpt.R;
@@ -83,7 +85,7 @@ public class CustomDialog {
 
                     if (diem >= 0.0 && diem <= 10.0) {
                         //Lưu vào db
-                        if (mDatabase.insertDiem(new Score(maMonHoc, hocKi, heSoDiem, diem))) {
+                        if (mDatabase.insertDiem(new Score(maMonHoc, hocKi, heSoDiem, diem),mySharedPreferences.getClassName())) {
                             Toast.makeText(activity, "Cập nhật điểm thành công!", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             homeFragment.loadData();
@@ -151,7 +153,7 @@ public class CustomDialog {
 
                     if (diem >= 0.0 && diem <= 10.0) {
                         //Lưu vào db
-                        if (mDatabase.insertDiem(new Score(idSubject, hocKi, heSoDiem, diem))) {
+                        if (mDatabase.insertDiem(new Score(idSubject, hocKi, heSoDiem, diem),mySharedPreferences.getClassName())) {
                             Toast.makeText(activity, "Cập nhật điểm thành công! " + idSubject, Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             detailedOutcomesActivity.loadData();
@@ -297,6 +299,42 @@ public class CustomDialog {
                     }
                 }
 
+
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void showDialogExportScheduleTable(final DatabaseTinhDiemTHPT mDatabase, final MainActivity mainActivity) {
+        final Dialog dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dialog_export_schedule_table_layout);
+
+
+        TextView btnClose = dialog.findViewById(R.id.tv_exit);
+        TextView btnOk = dialog.findViewById(R.id.tv_ok);
+        final EditText edtFileName = dialog.findViewById(R.id.edt_name_file);
+
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<ScheduleTable> scheduleTableArrayList = new ArrayList<>();
+                scheduleTableArrayList = mDatabase.getScheduleTable();
+                if(edtFileName.getText().toString().equals("")){
+                    Toast.makeText(mainActivity, "Bạn phải nhập tên file", Toast.LENGTH_SHORT).show();
+                }else{
+                    mainActivity.saveToJson(edtFileName.getText().toString(),mainActivity.makeJSONObject(scheduleTableArrayList));
+                    dialog.dismiss();
+                }
 
             }
         });

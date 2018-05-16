@@ -43,7 +43,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_edt_username"
+                android:background="@drawable/bg_grid_score"
                 android:hint="Email/Phone"
                 android:paddingLeft="8dp" />
         </LinearLayout>
@@ -69,7 +69,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_edt_username"
+                android:background="@drawable/bg_grid_score"
                 android:hint="Password"
                 android:paddingLeft="8dp" />
         </LinearLayout>

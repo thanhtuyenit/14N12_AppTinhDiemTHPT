@@ -62,21 +62,29 @@ public class DetailedOutcomesActivity extends AppCompatActivity {
         lnBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                customDialog.showDialogAddScoreForSubject(idSubject,mySharedPreferences,mDatabase,DetailedOutcomesActivity.this);
+                clickAdd(view);
             }
         });
 
         lnBtnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                customDialog.showDialogEditNameSubject(idSubject,mDatabase,DetailedOutcomesActivity.this);
+                clickEdit(view);
             }
         });
 
 
 
     }
+     public  void clickAdd(View view){
+         customDialog.showDialogAddScoreForSubject(idSubject,mySharedPreferences,mDatabase,DetailedOutcomesActivity.this);
 
+     }
+
+     public  void clickEdit(View view){
+         customDialog.showDialogEditNameSubject(idSubject,mDatabase,DetailedOutcomesActivity.this);
+
+     }
     @Override
     protected void onResume() {
         super.onResume();
@@ -129,7 +137,7 @@ public class DetailedOutcomesActivity extends AppCompatActivity {
             explvScore.expandGroup(i);
         }
 
-        ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(idSubject, mySharedPreferences.getSemester());
+        ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(idSubject, mySharedPreferences.getSemester(),mySharedPreferences.getClassName());
         if (listScore.isEmpty()) {
             tvScore.setText("-:-");
 
@@ -147,7 +155,7 @@ public class DetailedOutcomesActivity extends AppCompatActivity {
     }
 
     private ArrayList<Score> getScoreByIdAndCoefficient(int coefficient){
-        ArrayList<Score> list = mDatabase.getScoreByIdSubjectAndCoefficient(idSubject,mySharedPreferences.getSemester(),coefficient);
+        ArrayList<Score> list = mDatabase.getScoreByIdSubjectAndCoefficient(idSubject,mySharedPreferences.getSemester(),coefficient,mySharedPreferences.getClassName());
         Log.d("LOG", "getScoreByIdAndCoefficient: "+list.size());
         return list;
     }

@@ -5,7 +5,7 @@
     <string name="menu_diem_du_kien">Điểm dự kiến</string>
     <string name="menu_thoi_khoa_bieu">Thời khóa biểu</string>
     <string name="menu_bieu_do">Biểu đồ, thống kê</string>
-    <string name="menu_su_kien">Sự kiện</string>
+    <string name="menu_document">Tài liệu</string>
     <string name="menu_cai_dat">Cài đặt</string>
     <string name="st_chi_tiet">Chi tiết</string>
 
@@ -23,11 +23,11 @@
     <string name="str_text_diemheso3">Điểm hệ số 3</string>
     <string name="str_text_edit_name">Sửa tên môn học</string>
 
-    <integer-array name="background">
-        <item>@drawable/bg_item_gridview</item>
-        <item>@drawable/bg_item_gridview_1</item>
-        <item>@drawable/bg_item_gridview</item>
-    </integer-array>
+    <string name="str_export_scheduletable">Thời khóa biểu sẽ được sao lưu vào thư mục <b>TinhDiemTHPT</b> </string>
+    <string name="str_export_inputname">Nhập vào tên file:</string>
+    <string name="str_export_scheduletable_title">Sao lưu thời khóa biểu</string>
+    <string name="str_import_warning">Việc import dữ liệu nãy sẽ xóa hết tất cả dữ liệu thời khóa biểu hiện tại, bạn có muốn tiếp tục?</string>
+
 
 
 </resources>

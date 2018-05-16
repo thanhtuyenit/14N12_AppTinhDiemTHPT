@@ -16,6 +16,31 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_height="@dimen/height_medium">
+            <TextView
+                android:id="@+id/tv_diem_tb"
+                android:layout_marginLeft="28dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_grid_score"
+                android:gravity="center"
+                android:text="8.0"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_medium" />
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"/>
+
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/tv_monhoc"
             android:layout_width="match_parent"
@@ -25,15 +50,6 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/text_size_small"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_diem_tb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="8.0"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 
 

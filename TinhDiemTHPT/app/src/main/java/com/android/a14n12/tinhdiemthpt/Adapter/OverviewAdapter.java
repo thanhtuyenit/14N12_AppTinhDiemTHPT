@@ -67,7 +67,7 @@ public class OverviewAdapter extends BaseAdapter {
         }
 
         for(int j =1; j<=3; j++){
-            ArrayList<Score> listScore = mDatabase.getScoreByIdSubjectAndCoefficient(listSub.get(i).getMaMonHoc(),mySharedPreferences.getSemester(),j);
+            ArrayList<Score> listScore = mDatabase.getScoreByIdSubjectAndCoefficient(listSub.get(i).getMaMonHoc(),mySharedPreferences.getSemester(),j,mySharedPreferences.getClassName());
             String str = "";
             for(int k=0; k<listScore.size(); k++){
                 if(k==0){

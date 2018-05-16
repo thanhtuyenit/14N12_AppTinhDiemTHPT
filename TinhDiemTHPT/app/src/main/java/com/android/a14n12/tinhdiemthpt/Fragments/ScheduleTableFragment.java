@@ -79,7 +79,7 @@ public class ScheduleTableFragment extends Fragment {
 
     public void init() {
         mySharedPreferences = MySharedPreferences.getInstance(getActivity());
-        myAlarmManage = new MyAlarmManage(getActivity(),mDatabase);
+        myAlarmManage = new MyAlarmManage(getActivity(),mDatabase,mySharedPreferences);
         scheduleTableArrayList = new ArrayList<>();
         schedule_table = getView().findViewById(R.id.sche_table);
         row = new TableRow[row_count];
@@ -171,6 +171,7 @@ public class ScheduleTableFragment extends Fragment {
                     if (mDatabase.insertSchedule(scheduleTable)) {
                         Toast.makeText(getActivity(), "Cập nhập Thời Khóa Biểu thành công", Toast.LENGTH_LONG).show();
                         if(mySharedPreferences.getIsSetAlarm()){
+                            Log.d(TAG, "onClick: "+" set alarm true");
                             myAlarmManage.cancelAllAlarm();
                             myAlarmManage.setAlarmForSchedule();
                         }

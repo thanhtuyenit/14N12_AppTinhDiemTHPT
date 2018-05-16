@@ -72,7 +72,7 @@ public class OverviewFragment extends Fragment {
     private void loadData() {
         listSubject = mDatabase.getMonHoc();
         for (int i = 0; i < listSubject.size(); i++) {
-            ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(listSubject.get(i).getMaMonHoc(), mySharedPreferences.getSemester());
+            ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(listSubject.get(i).getMaMonHoc(), mySharedPreferences.getSemester(),mySharedPreferences.getClassName());
             if (listScore.isEmpty()) {
                 listSubject.get(i).setAverage(0.0f);
 
@@ -90,8 +90,9 @@ public class OverviewFragment extends Fragment {
             listView.setAdapter(overviewAdapter);
 
             Float score = mySharedPreferences.getTotalScore();
-            Log.d(TAG, "loadData: "+score);
-            if (score != null) {
+
+            if (score >=0.0f) {
+                Log.d(TAG, "loadData: "+score);
                 tvScoreTotal.setText(String.format("%.2f", score));
             } else {
                 tvScoreTotal.setText("-:-");

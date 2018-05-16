@@ -59,10 +59,10 @@ public class HomeAdapter extends BaseAdapter {
         LinearLayout main = row.findViewById(R.id.ln_main);
 
         //random background color
-        int[] arr_bg_color = {R.drawable.bg_item_gridview, R.drawable.bg_item_gridview_1,
-                R.drawable.bg_item_gridview_2, R.drawable.bg_item_gridview_3, R.drawable.bg_item_gridview_4, R.drawable.bg_item_gridview_5};
-        int randomAndroidColor = arr_bg_color[new Random().nextInt(arr_bg_color.length)];
-        main.setBackgroundResource(randomAndroidColor);
+//        int[] arr_bg_color = {R.drawable.bg_item_gridview, R.drawable.bg_item_gridview_1,
+//                R.drawable.bg_item_gridview_2, R.drawable.bg_item_gridview_3, R.drawable.bg_item_gridview_4, R.drawable.bg_item_gridview_5};
+//        int randomAndroidColor = arr_bg_color[new Random().nextInt(arr_bg_color.length)];
+//        main.setBackgroundResource(R.drawable.bg_item_gridview);
 
         tvMonHoc.setText(listSubject.get(i).getTenMonHoc());
         Float average = listSubject.get(i).getAverage();
@@ -73,29 +73,6 @@ public class HomeAdapter extends BaseAdapter {
         }
 
 
-        //Get score from DB and calculate average score
-//        ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(maMonHoc, hocKi);
-//        if (listScore.isEmpty()) {
-//            tvDiemTB.setText("-:-");
-//            listSubject.get(i).setAverage(0.0f);
-//            Log.d("TAG", "getView: getAverage " + listSubject.get(i).getAverage());
-//
-//        } else {
-//            Float diemtb = 0.0f;
-//            int tongHeSo = 0;
-//            for (int j = 0; j < listScore.size(); j++) {
-//                diemtb += listScore.get(j).getDiem() * listScore.get(j).getHeSO();
-//                tongHeSo += listScore.get(j).getHeSO();
-//
-//
-//            }
-//            diemtb /= tongHeSo;
-//            tvDiemTB.setText(String.format("%.2f", diemtb));
-//            listSubject.get(i).setAverage(diemtb);
-//
-//        }
-
-//        tinhDiemTBCong();
         return row;
     }
 

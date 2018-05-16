@@ -2,30 +2,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_white"
     tools:context="com.android.a14n12.tinhdiemthpt.Fragments.SettingFragment">
 
     <!-- TODO: Update blank fragment layout -->
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/height_large"
-    android:gravity="center">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/color_text"
-        android:text="Bật nhắc nhở"
-        android:gravity="center|left"
-        android:padding="@dimen/margin_small"
-        android:textSize="@dimen/text_size_small"
-        />
-    <CheckBox
-        android:id="@+id/cbx_alarm"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:enabled="true"
-        android:checked="false"/>
-</RelativeLayout>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nhắc nhở"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_medium"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:paddingLeft="@dimen/margin_medium"
+            android:layout_height="@dimen/height_small"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_text"
+                android:id="@+id/tv_turn_on_alarm"
+                android:text="Bật nhắc nhở"
+                android:gravity="center|left"
+                android:textSize="@dimen/text_size_small"
+                />
+            <CheckBox
+                android:id="@+id/cbx_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:enabled="true"
+                android:checked="false"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_height="1dp"
+            android:paddingLeft="@dimen/margin_medium"
+            android:background="@color/color_editTextDiem"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_height="@dimen/height_small"
+            android:paddingLeft="@dimen/margin_medium"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tv_choose_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_text"
+                android:text="Thời gian"
+                android:gravity="center|left"
+
+                android:textSize="@dimen/text_size_small"
+                />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/margin_small"
+                android:textSize="@dimen/text_size_small"
+                android:layout_centerInParent="true"
+                android:gravity="right" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_height="1dp"
+            android:background="@color/color_editTextDiem"/>
+    </LinearLayout>
 </FrameLayout>

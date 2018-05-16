@@ -1,6 +1,5 @@
 package com.android.a14n12.tinhdiemthpt.Fragments;
 
-import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,19 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.a14n12.tinhdiemthpt.Activity.DetailActivity;
 import com.android.a14n12.tinhdiemthpt.Activity.DetailedOutcomesActivity;
 import com.android.a14n12.tinhdiemthpt.Activity.MainActivity;
 import com.android.a14n12.tinhdiemthpt.Adapter.HomeAdapter;
@@ -86,11 +76,15 @@ public class HomeFragment extends Fragment {
         loadData();
         tvClassName.setText(mySharedPreferences.getClassName() + "");
         tvSemester.setText(mySharedPreferences.getSemester() + "");
-        tvDiemTB.setText(String.format("%.2f", mySharedPreferences.getTotalScore()));
+        if (mySharedPreferences.getTotalScore() >=0.0f) {
+            tvDiemTB.setText(String.format("%.2f", mySharedPreferences.getTotalScore()));
+        } else {
+            tvDiemTB.setText("-:-");
+        }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new CustomDialog(getActivity()).showDialogAddScore(listSubject,mySharedPreferences,mDatabase,HomeFragment.this);
+                new CustomDialog(getActivity()).showDialogAddScore(listSubject, mySharedPreferences, mDatabase, HomeFragment.this);
             }
         });
 
@@ -98,9 +92,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(), DetailedOutcomesActivity.class);
-                intent.putExtra("idSubject",listSubject.get(i).getMaMonHoc());
+                intent.putExtra("idSubject", listSubject.get(i).getMaMonHoc());
 //                intent.putExtra("nameSubject",listSubject.get(i).getTenMonHoc());
-                intent.putExtra("averageScore",listSubject.get(i).getAverage());
+                intent.putExtra("averageScore", listSubject.get(i).getAverage());
                 startActivity(intent);
             }
         });
@@ -123,11 +117,11 @@ public class HomeFragment extends Fragment {
         db = mDatabase.openDatabase();
     }
 
-    public void loadData(){
+    public void loadData() {
         listSubject = mDatabase.getMonHoc();
-        for(int i = 0; i<listSubject.size(); i++){
+        for (int i = 0; i < listSubject.size(); i++) {
             //Get score from DB and calculate average score
-            ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(listSubject.get(i).getMaMonHoc(), mySharedPreferences.getSemester());
+            ArrayList<Score> listScore = mDatabase.getDiemTheoMonHoc(listSubject.get(i).getMaMonHoc(), mySharedPreferences.getSemester(),mySharedPreferences.getClassName());
             if (listScore.isEmpty()) {
                 listSubject.get(i).setAverage(0.0f);
                 Log.d("TAG", "getView: getAverage " + listSubject.get(i).getAverage());
@@ -147,6 +141,7 @@ public class HomeFragment extends Fragment {
         mAdapter = new HomeAdapter(getActivity(), listSubject);
         gridViewHome.setAdapter(mAdapter);
     }
+
     public void tinhDiemTBCong() {
         float result = 0.0f;
         int count = 0;
@@ -163,9 +158,6 @@ public class HomeFragment extends Fragment {
 
 
     }
-
-
-
 
 
 }

@@ -26,6 +26,7 @@ import android.widget.ToggleButton;
 
 
 import com.android.a14n12.tinhdiemthpt.Database.DatabaseTinhDiemTHPT;
+import com.android.a14n12.tinhdiemthpt.Database.MySharedPreferences;
 import com.android.a14n12.tinhdiemthpt.Model.ScheduleTable;
 
 import java.util.ArrayList;
@@ -43,10 +44,12 @@ public class MyAlarmManage {
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
     private DatabaseTinhDiemTHPT mDatabase;
+    private MySharedPreferences mySharedPreferences;
 
-    public MyAlarmManage(Activity context, DatabaseTinhDiemTHPT mDatabase) {
+    public MyAlarmManage(Activity context, DatabaseTinhDiemTHPT mDatabase,MySharedPreferences mySharedPreferences) {
         this.context = context;
         this.mDatabase = mDatabase;
+        this.mySharedPreferences = mySharedPreferences;
     }
 
     public void setAlarm(int day, int hours, int minute, int request) {
@@ -98,7 +101,8 @@ public class MyAlarmManage {
 
         for (int i = 0; i < listAlarm.size(); i++) {
             Log.d(TAG, "loadData: set alarm ==> " + (i + 1));
-            setAlarm(listAlarm.get(i), 20, 0, listAlarm.get(i));
+            Log.d(TAG, "loadData: set alarm hours " + mySharedPreferences.getHoursAlarm()+" minute"+mySharedPreferences.getMinuteAlarm());
+            setAlarm(listAlarm.get(i), mySharedPreferences.getHoursAlarm(), mySharedPreferences.getMinuteAlarm(), listAlarm.get(i));
         }
 
 
